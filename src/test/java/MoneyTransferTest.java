@@ -106,7 +106,7 @@ public class MoneyTransferTest {
     System.out.println("Final balance of Account 2: " + account2.getBalance());
   }
 
-  @Test //TODO: fix
+  @Test
   public void testRaceConditionFixWithMutex() throws InterruptedException {
     BankAccount account1 = new BankAccount(1000, "Account 1");
     BankAccount account2 = new BankAccount(500, "Account 2");

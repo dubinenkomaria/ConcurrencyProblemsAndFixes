@@ -4,13 +4,12 @@ public class MoneyTransferRunnableMutex  implements Runnable{
   private BankAccount fromAccount;
   private BankAccount toAccount;
   private int amount;
-  private ReentrantLock lock;
+  private static final ReentrantLock lock = new ReentrantLock();
 
   public MoneyTransferRunnableMutex(BankAccount fromAccount, BankAccount toAccount, int amount) {
     this.fromAccount = fromAccount;
     this.toAccount = toAccount;
     this.amount = amount;
-    this.lock = new ReentrantLock();
   }
 
   public void run() {
